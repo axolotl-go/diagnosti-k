@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "name": "Pacientes",
+      "href": "/pacientes",
+      "sublink": [
+        {
+          "name": "Estudios",
+          "href": "/estudios"
+        },
+        {
+          "name": "Mis Resultados",
+          "href": "/mis-resultados"
+        },
+        {
+          "name": "Promociones",
+          "href": "/promociones"
+        },
+        {
+          "name": "Facturación",
+          "href": "/facturacion"
+        },
+        {
+          "name": "Sucursales",
+          "href": "/sucursales"
+        },
+        {
+          "name": "Tarjeta de Beneficios",
+          "href": "/tarjeta-beneficios"
+        },
+        {
+          "name": "Servicios",
+          "href": "/servicios"
+        }
+      ]
+    },
+    {
+      "name": "Médicos",
+      "href": "/medicos",
+      "sublink": [
+        {
+          "name": "Mis Resultados",
+          "href": "/mis-resultados"
+        },
+        {
+          "name": "Registro Médico",
+          "href": "/registro-medico"
+        },
+        {
+          "name": "Servicios",
+          "href": "/servicios"
+        }
+      ]
+    },
+    {
+      "name": "Empresas",
+      "href": "/empresas",
+      "sublink": [
+        {
+          "name": "Bienvenida",
+          "href": "/bienvenida"
+        },
+        {
+          "name": "Resultados",
+          "href": "/resultados"
+        },
+        {
+          "name": "Promociones",
+          "href": "/promociones"
+        },
+        {
+          "name": "Sucursales",
+          "href": "/sucursales"
+        },
+        {
+          "name": "Tarjeta de Beneficios",
+          "href": "/tarjeta-beneficios"
+        },
+        {
+          "name": "Servicio",
+          "href": "/servicio"
+        }
+      ]
+    },
+    {
+      "name": "Catálogo de Médicos",
+      "href": "/catalogo-medicos"
+    },
+    {
+      "name": "Alianzas",
+      "href": "/alianzas"
+    }
+  ]
+}
