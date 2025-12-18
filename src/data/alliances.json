@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "name": "Hospital Joya",
+      "href": "/alliances/hospital-joya",
+      "image": "/alliances/Logo_Hospital_Joya.svg"
+    },
+    {
+      "name": "Hospital MedAssist",
+      "href": "/alliances/hospital-medassist",
+      "image": "/alliances/Logotipo-hospital-medassist.png"
+    },
+    {
+      "name": "Ribera Medical Center",
+      "href": "/alliances/ribera-medical-center",
+      "image": "/alliances/ribera_medical_center.webp"
+    },
+    {
+      "name": "Hospiten",
+      "href": "/alliances/hospiten",
+      "image": "/alliances/hospiten-logo.svg"
+    },
+    {
+      "name": "Saint Luke's Hospital",
+      "href": "/alliances/saint-lukes-hospital",
+      "image": "/alliances/saint_lukes_hospital.png"
+    },
+    {
+      "name": "San Mare Health Care Group",
+      "href": "/alliances/san-mare-health-care-group",
+      "image": "/alliances/san_mare_healt_care_group.svg"
+    },
+    {
+      "name": "Vallarta Medical Center",
+      "href": "/alliances/vallarta-medical-center",
+      "image": "/alliances/vallarta_medical_center.png"
+    },
+    {
+      "name": "Cardiomed",
+      "href": "/alliances/cardiomed",
+      "image": "/alliances/Cardiomed_logo.png"
+    },
+    {
+      "name": "Cedine",
+      "href": "/alliances/cedine",
+      "image": "/alliances/logo_cedine.png"
+    },
+    {
+      "name": "City Médica",
+      "href": "/alliances/city-medica",
+      "image": "/alliances/logo_city medica.png"
+    },
+    {
+      "name": "Clínica Ángeles",
+      "href": "/alliances/clinica-angeles",
+      "image": "/alliances/logo_clinica angeles.png"
+    },
+    {
+      "name": "Hospital Las Palmas",
+      "href": "/alliances/las-palmas",
+      "image": "/alliances/logo_las palmas.png"
+    },
+    {
+      "name": "Onco PV",
+      "href": "/alliances/onco-pv",
+      "image": "/alliances/logo_onco pv.png"
+    },
+    {
+      "name": "Ossum",
+      "href": "/alliances/ossum",
+      "image": "/alliances/logo_ossum.png"
+    },
+    {
+      "name": "San Ignacio",
+      "href": "/alliances/san-ignacio",
+      "image": "/alliances/logo_san ignacio.png"
+    },
+    {
+      "name": "Soundialys",
+      "href": "/alliances/soundialys",
+      "image": "/alliances/logo_soundialys.png"
+    },
+    {
+      "name": "Servicio Médico de la Bahía",
+      "href": "/alliances/servicio-medico-de-la-bahia",
+      "image": "/alliances/logo_servicio medico de la bahia.png"
+    },
+    {
+      "name": "Vidamedic",
+      "href": "/alliances/vidamedic",
+      "image": "/alliances/logo_vidamedic.png"
+    },
+    {
+      "name": "Uro Vallarta",
+      "href": "/alliances/uro-vallarta",
+      "image": "/alliances/logo_uro vallarta.png"
+    },
+    {
+      "name": "WowMom",
+      "href": "/alliances/wowmom",
+      "image": "/alliances/logo_wowmom.png"
+    }
+  ]
+}

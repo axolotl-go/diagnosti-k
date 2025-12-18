@@ -1,34 +1,64 @@
 "use client";
 
 import { useState } from "react";
-import navigation from "../data/navigation.json";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-
-type TypeNavigation = {
-  name: string;
-  href: string;
-  sublink?: { name: string; href: string }[];
-};
+import navigationData from "@/data/navigation.json";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 
 const Nav = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   // Detectar sección actual
   const section = pathname.split("/")[1];
-  const currentNav: TypeNavigation | undefined = navigation.data.find(
+  const currentNav: TypeNavigation | undefined = navigationData.data.find(
     (item) => item.href.replace("/", "") === section
   );
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white shadow-md text-black">
-        <div className="flex items-center justify-between container mx-auto px-4 py-3">
-          <a href="/">
-            <img className="h-12" src="/DgkPc_logo.svg" alt="Logo" />
+      {/* Barra superior de contacto */}
+      <div className="bg-blue-900 text-white text-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center py-2">
+            <div className="flex space-x-6">
+              <a
+                href="tel:+52 322 225 8553"
+                className="flex items-center hover:text-blue-200 transition"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                <span className="hidden sm:inline">322 225 8553</span>
+              </a>
+              <a
+                href="mailto:citas@diagnosti-k.com"
+                className="flex items-center hover:text-blue-200 transition"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                <span className="hidden sm:inline">citas@diagnosti-k.com</span>
+              </a>
+            </div>
+            <div className="flex items-center">
+              <MapPin className="w-4 h-4 mr-2" />
+              <span className="hidden md:inline">
+                Av. Francisco Villa 1389-A, Fluvial Vallarta, PV, Jal.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Navegación principal */}
+      <nav className="sticky top-0 z-50 bg-white shadow-md">
+        <div className="flex items-center justify-between container mx-auto px-4 py-4">
+          <a href="/" className="flex items-center">
+            <img
+              src="/DgkPc_logo.svg"
+              alt="Logo"
+              className="h-12 object-contain"
+            />
           </a>
 
           {/* Botón hamburguesa */}
@@ -40,23 +70,24 @@ const Nav = () => {
           </button>
 
           {/* Menú desktop */}
-          <div className="hidden md:block">
-            <ul className="font-medium flex flex-row space-x-1">
-              {navigation.data.map(({ href, name }: TypeNavigation) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    className="block py-2 px-3 rounded hover:bg-gray-100 transition-colors"
-                  >
-                    {name.toUpperCase()}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="hidden md:flex items-center space-x-1">
+            {navigationData.data.map(({ href, name }: TypeNavigation) => (
+              <a
+                key={href}
+                href={href}
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  pathname === href
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {name}
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Barra inferior dependiendo de la sección */}
+        {/* Barra inferior con sublinks */}
         {currentNav?.sublink && (
           <div className="hidden md:block border-t border-gray-200 bg-gray-50">
             <div className="container mx-auto px-4 py-2">
@@ -65,9 +96,9 @@ const Nav = () => {
                   <a
                     href={`${currentNav.href}${item.href}`}
                     key={item.href}
-                    className="block py-2 px-3 rounded hover:bg-gray-100 transition-colors"
+                    className="py-2 px-3 text-gray-700 rounded hover:bg-white hover:text-blue-600 transition-colors"
                   >
-                    {item.name.toUpperCase()}
+                    {item.name}
                   </a>
                 ))}
               </div>
@@ -78,7 +109,7 @@ const Nav = () => {
 
       {/* Overlay móvil */}
       <div
-        className={`fixed inset-0 bg-[#00000094] z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/60 z-40 md:hidden transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={toggleMenu}
@@ -86,64 +117,83 @@ const Nav = () => {
 
       {/* Sidebar móvil */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 overflow-y-auto ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-blue-900 text-white">
           <span className="font-semibold text-lg">Menú</span>
           <button
             onClick={toggleMenu}
-            className="p-2 text-gray-700 rounded-lg hover:bg-gray-100"
+            className="p-2 text-white rounded-lg hover:bg-blue-800"
             aria-label="Cerrar menú"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <X />
           </button>
         </div>
 
-        <ul className="font-medium flex flex-col py-4 text-black">
-          {navigation.data.map(({ href, name }: TypeNavigation) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="block py-3 px-6 hover:bg-gray-100 transition-colors border-l-4 border-transparent hover:border-blue-500"
-                onClick={toggleMenu}
-              >
-                {name.toUpperCase()}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="py-4">
+          {navigationData.data.map(
+            ({ href, name, sublink }: TypeNavigation) => (
+              <div key={href}>
+                <div className="flex items-center justify-between">
+                  <a
+                    href={href}
+                    className={`flex-1 text-black py-3 px-6 font-medium transition-colors border-l-4 ${
+                      pathname === href
+                        ? "border-blue-600 bg-blue-50 text-blue-600"
+                        : "border-transparent hover:bg-gray-50"
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    {name}
+                  </a>
+                  {sublink && (
+                    <button
+                      onClick={() =>
+                        setOpenSubmenu(openSubmenu === href ? null : href)
+                      }
+                      className="px-4 py-3 text-gray-600"
+                    >
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform ${
+                          openSubmenu === href ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
+                </div>
 
-        {/* Barra inferior del menú móvil */}
-        {currentNav?.sublink && (
-          <div className="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-gray-50 p-4">
-            <div className="flex flex-col space-y-2 text-sm">
-              {currentNav.sublink.map((item) => (
-                <a
-                  href={`${currentNav.href}${item.href}`}
-                  key={item.href}
-                  className="text-gray-600 hover:text-blue-500"
-                  onClick={toggleMenu}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+                {/* Submenú móvil */}
+                {sublink && openSubmenu === href && (
+                  <div className="bg-gray-50 border-l-4 border-blue-200">
+                    {sublink.map((item) => (
+                      <a
+                        key={item.href}
+                        href={`${href}${item.href}`}
+                        className="block py-2.5 px-6 pl-12 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        onClick={toggleMenu}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          )}
+
+          {/* CTA móvil */}
+          <div className="px-6 mt-6">
+            <a
+              href="/agendar-cita"
+              className="block w-full bg-blue-600 text-center px-4 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+              onClick={toggleMenu}
+            >
+              Agendar Cita
+            </a>
           </div>
-        )}
+        </div>
       </div>
     </>
   );
