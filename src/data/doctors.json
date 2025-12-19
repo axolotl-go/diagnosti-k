@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "sucursal": "Sucursal Joya Marina",
+      "doctor": "Dr. Rafael Alfonso Gutiérrez Pérez.",
+      "especialidad": "Especialista egresado de: La Universidad Autónoma de San Luis Potosí. Cédula de especialista: 5452909. Certificado del CMRI: 308 al 2027."
+    },
+    {
+      "sucursal": "Sucursal Joya Riviera",
+      "doctor": "Dr. Rafael Alfonso Gutiérrez Pérez.",
+      "especialidad": "Especialista egresado de: La Universidad Autónoma de San Luis Potosí. Cédula de especialista: 5452909. Certificado del CMRI: 308 al 2027."
+    },
+    {
+      "sucursal": "Sucursal Hospiten",
+      "doctor": "Dr. José Arturo Riva Palacio Guzmán.",
+      "especialidad": "Especialista egresado de: La Universidad Nacional Autónoma de México. Cédula de especialista: 6384721. Certificado del CMRI: No. 2861 al 2027."
+    },
+    {
+      "sucursal": "Sucursal Diagnosti-k",
+      "doctor": "Dr. José Arturo Riva Palacio Guzmán.",
+      "especialidad": "Especialista egresado de: La Universidad Nacional Autónoma de México. Cédula de especialista: 6384721. Certificado del CMRI: No. 2861 al 2027."
+    },
+    {
+      "sucursal": "Sucursal Medassist",
+      "doctor": "Dr. José Arturo Riva Palacio Guzmán.",
+      "especialidad": "Especialista egresado de: La Universidad Nacional Autónoma de México. Cédula de especialista: 6384721. Certificado del CMRI: No. 2861 al 2027."
+    }
+  ]
+}

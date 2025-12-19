@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "image": "/assets/a.png",
+      "title": "Impulsa tu Negocio",
+      "description": "Descubre soluciones innovadoras que transformarán tu empresa hacia el éxito digital.",
+      "buttonText": "Comenzar Ahora"
+    },
+    {
+      "image": "/assets/b.png",
+      "title": "Análisis Avanzado",
+      "description": "Obtén insights profundos con nuestras herramientas de análisis de datos en tiempo real.",
+      "buttonText": "Ver Más"
+    },
+    {
+      "image": "/assets/c.png",
+      "title": "Crece con Nosotros",
+      "description": "Únete a miles de empresas que ya confían en nuestra plataforma para su crecimiento.",
+      "buttonText": "Empezar Gratis"
+    }
+  ]
+}

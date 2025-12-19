@@ -3,7 +3,17 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import navigationData from "@/data/navigation.json";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronDown,
+  MessageCircle,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -21,10 +31,10 @@ const Nav = () => {
   return (
     <>
       {/* Barra superior de contacto */}
-      <div className="bg-blue-900 text-white text-sm">
+      <div className="bg-blue text-white text-sm">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-2">
-            <div className="flex space-x-6">
+          <div className="flex justify-end items-end py-2">
+            {/* <div className="flex space-x-6">
               <a
                 href="tel:+52 322 225 8553"
                 className="flex items-center hover:text-blue-200 transition"
@@ -39,12 +49,32 @@ const Nav = () => {
                 <Mail className="w-4 h-4 mr-2" />
                 <span className="hidden sm:inline">citas@diagnosti-k.com</span>
               </a>
-            </div>
-            <div className="flex items-center">
-              <MapPin className="w-4 h-4 mr-2" />
-              <span className="hidden md:inline">
-                Av. Francisco Villa 1389-A, Fluvial Vallarta, PV, Jal.
-              </span>
+            </div> */}
+            <div className="flex justify-around">
+              {/* Contáctanos */}
+              <div className="flex items-center uppercase gap-1 mr-20">
+                <span className="font-bold">Contáctanos:</span>
+
+                <Phone className="w-4 h-4" />
+                <span className="hidden md:inline">(322) 224 8622</span>
+
+                <MessageCircle className="w-4 h-4 ml-2" />
+                <span className="hidden md:inline">(322) 116 7693</span>
+              </div>
+
+              {/* Redes */}
+              <div className="flex items-center uppercase gap-1">
+                <span className="font-bold">Síguenos en:</span>
+
+                <Facebook className="w-4 h-4" />
+                <Instagram className="w-4 h-4" />
+                <a
+                  href="https://www.facebook.com/grupodiagnostik"
+                  className="hidden md:inline"
+                >
+                  grupodiagnostik
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -54,11 +84,7 @@ const Nav = () => {
       <nav className="sticky top-0 z-50 bg-white shadow-md">
         <div className="flex items-center justify-between container mx-auto px-4 py-4">
           <a href="/" className="flex items-center">
-            <img
-              src="/DgkPc_logo.svg"
-              alt="Logo"
-              className="h-12 object-contain"
-            />
+            <img src="/DGK.png" alt="Logo" className="h-12 object-contain" />
           </a>
 
           {/* Botón hamburguesa */}
@@ -77,8 +103,8 @@ const Nav = () => {
                 href={href}
                 className={`py-2 px-4 rounded-lg font-medium transition-colors ${
                   pathname === href
-                    ? "bg-blue-50 text-blue-600"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-blue-50 text-blue"
+                    : "text-gray-700 hover:text-green hover:bg-gray-100"
                 }`}
               >
                 {name}
@@ -96,7 +122,7 @@ const Nav = () => {
                   <a
                     href={`${currentNav.href}${item.href}`}
                     key={item.href}
-                    className="py-2 px-3 text-gray-700 rounded hover:bg-white hover:text-blue-600 transition-colors"
+                    className="py-2 px-3 text-gray-700 rounded hover:bg-white hover:text-green transition-colors"
                   >
                     {item.name}
                   </a>
@@ -141,7 +167,7 @@ const Nav = () => {
                     href={href}
                     className={`flex-1 text-black py-3 px-6 font-medium transition-colors border-l-4 ${
                       pathname === href
-                        ? "border-blue-600 bg-blue-50 text-blue-600"
+                        ? "border-blue-600 bg-blue-50 text-blue"
                         : "border-transparent hover:bg-gray-50"
                     }`}
                     onClick={toggleMenu}
@@ -171,7 +197,7 @@ const Nav = () => {
                       <a
                         key={item.href}
                         href={`${href}${item.href}`}
-                        className="block py-2.5 px-6 pl-12 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        className="block py-2.5 px-6 pl-12 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue transition-colors"
                         onClick={toggleMenu}
                       >
                         {item.name}
@@ -187,7 +213,7 @@ const Nav = () => {
           <div className="px-6 mt-6">
             <a
               href="/agendar-cita"
-              className="block w-full bg-blue-600 text-center px-4 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+              className="block w-full bg-blue text-center px-4 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
               onClick={toggleMenu}
             >
               Agendar Cita

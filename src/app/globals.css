@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blue: #007dcd;
+  --color-green: #00b189;
+}
+
 .scroll-hidden {
   overflow-y: auto;
   -ms-overflow-style: none;
@@ -9,13 +14,6 @@
 .scroll-hidden::-webkit-scrollbar {
   display: none;
 }
-
-/* 
-Colors
-
-blue : #0075c9
-
-*/
 
 @keyframes infinite-scroll {
   from {
